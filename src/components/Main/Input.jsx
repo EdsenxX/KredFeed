@@ -7,7 +7,7 @@ const Input = (props) => {
   const ID = `${props.name}-${ramdom}`;
 
   return (
-    <div className="w-1/2 px-1 mb-3">
+    <div className="w-full sm:w-1/2 px-1 mb-3">
       <label htmlFor={ID} className="block text-gray-600 text-sm mb-2">
         {props.title}
         {props.required && <span className="text-red-500"> *</span>}
