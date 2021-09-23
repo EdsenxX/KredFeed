@@ -9,7 +9,7 @@ const RepresentanteLegal = (props) => {
   return (
     <Section title="Representante Legal" id="representanteLegal">
       <Input title="Nombre" type="text" name="nombre" required onChange={props.handleRepresentanteLegal}/>
-      <Input title="Genero" type="text" name="genero" required onChange={props.handleRepresentanteLegal}/>
+      <Input title="Género" type="text" name="genero" required onChange={props.handleRepresentanteLegal}/>
       <Input
         title="Fecha Nacimiento"
         type="date"
@@ -25,7 +25,7 @@ const RepresentanteLegal = (props) => {
         onChange={props.handleRepresentanteLegal}
       />
       <Input
-        title="Pais de Nacimiento"
+        title="País de Nacimiento"
         type="text"
         name="paisNacimiento"
         required
@@ -43,21 +43,21 @@ const RepresentanteLegal = (props) => {
       />
       <Input title="Estado Civil" type="text" name="estadoCivil" required onChange={props.handleRepresentanteLegal}/>
       <Input
-        title="Correo Electronico"
+        title="Correo Electrónico"
         type="text"
         name="correoElectronicoRepresentante"
         required
         onChange={props.handleRepresentanteLegal}
       />
       <Input
-        title="Telefono"
+        title="Teléfono"
         type="text"
         name="telefonoRepresentante"
         required
         onChange={props.handleRepresentanteLegal}
       />
       <InputFile
-        title="Documento de Identidad"
+        title="Documento de Identificación"
         name="documentoIdentidad"
         required
         onChange={props.handleRepresentanteLegal}

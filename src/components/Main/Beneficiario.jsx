@@ -10,10 +10,10 @@ const Beneficiario = (props) => {
       <Input title="Nombre" type="text" name="nombre" required onChange={props.handleBeneficiario}/>
       <Input title="Fecha de Nacimiento" type="date" name="fechaNacimiento" required onChange={props.handleBeneficiario}/>
       <Input title="CURP" type="text" name="curp" required onChange={props.handleBeneficiario}/>
-      <Input title="Genero" type="text" name="genero" required onChange={props.handleBeneficiario}/>
+      <Input title="Género" type="text" name="genero" required onChange={props.handleBeneficiario}/>
       <Input title="Domicilio Particular" type="text" name="domicilioParticular" required onChange={props.handleBeneficiario}/>
-      <Input title="Numero de Telefono" type="number" name="numeroTelefono" required onChange={props.handleBeneficiario}/>
-      <Input title="Correo Electronico" type="email" name="correoElectronico" required onChange={props.handleBeneficiario}/>
+      <Input title="Número de Telefónico" type="number" name="numeroTelefono" required onChange={props.handleBeneficiario}/>
+      <Input title="Correo Electrónico" type="email" name="correoElectronico" required onChange={props.handleBeneficiario}/>
     </Section>
   );
 };

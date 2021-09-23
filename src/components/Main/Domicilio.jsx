@@ -9,48 +9,48 @@ const Domicilio = (props) => {
   return (
     <Section title="Domicilio" id="domicilio">
       <Input
-        title="Calle o Avenido"
+        title="Calle o Avenida"
         type="text"
         name="calleAvenida"
         required
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Numero exterior"
+        title="Número exterior"
         type="text"
         name="numeroExterior"
         required
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Numero interior"
+        title="Número interior"
         type="text"
         name="numeroInterior"
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Codigo Postal"
+        title="Código Postal"
         type="number"
         name="codigoPostal"
         required
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Colonia Urbanizacion"
+        title="Colonia Urbanización"
         type="text"
         name="coloniaUrbanizacion"
         required
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Delegacion o Municipio"
+        title="Delegación o Municipio"
         type="text"
         name="delegacionMunicipio"
         required
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Ciudad o poblacion"
+        title="Ciudad o Población"
         type="text"
         name="cuidadPoblacion"
         required
@@ -64,16 +64,23 @@ const Domicilio = (props) => {
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Pais"
+        title="País"
         type="text"
         name="pais"
         required
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Numero de Telefono del Domicilio"
+        title="Numero Telefónico del Domicilio"
         type="number"
         name="numeroTelefono"
+        required
+        onChange={props.handleDomicilio}
+      />
+      <Input
+        title="Dirección de correo electrónico"
+        type="email"
+        name="correoElectronico"
         required
         onChange={props.handleDomicilio}
       />

@@ -10,8 +10,10 @@ class Perfil extends Component {
       perfil: {
         informacionGeneral: {
           razonSocial: "",
+          nombreComercial: "",
           nacionalidad: "",
           fechaConstitucion: "",
+          fechaInicioOperaciones: "",
           rfc: "",
           regimenFiscal: "",
           industria: "",

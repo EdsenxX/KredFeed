@@ -15,6 +15,13 @@ const InformacionGeneral = (props) => {
         onChange={props.handleInformacionGeneral}
       />
       <Input
+        title="Nombre Comercial"
+        type="text"
+        name="nombreComercial"
+        required
+        onChange={props.handleInformacionGeneral}
+      />
+      <Input
         title="Nacionalidad"
         type="text"
         name="nacionalidad"
@@ -22,9 +29,16 @@ const InformacionGeneral = (props) => {
         onChange={props.handleInformacionGeneral}
       />
       <Input
-        title="Fecha de constitucion"
+        title="Fecha de constitución"
         type="date"
         name="fechaConstitucion"
+        required
+        onChange={props.handleInformacionGeneral}
+      />
+      <Input
+        title="Fecha de inicio de operaciones"
+        type="date"
+        name="fechaInicioOperaciones"
         required
         onChange={props.handleInformacionGeneral}
       />
@@ -36,7 +50,7 @@ const InformacionGeneral = (props) => {
         onChange={props.handleInformacionGeneral}
       />
       <Input
-        title="Regimen Fiscal"
+        title="Régimen Fiscal"
         type="text"
         name="regimenFiscal"
         required

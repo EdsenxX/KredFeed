@@ -64,7 +64,7 @@ const InputFile = (props) => {
             <div className={styles.icon}>
               <img src={uploadIcon} alt="icono subir archivo" />
             </div>
-            <header>Arrastrar y soltar para subir un archivo</header>
+            <header>Arrastrar y suelta para subir un archivo</header>
             <span className="block">O</span>
             <label
               htmlFor={ID}
