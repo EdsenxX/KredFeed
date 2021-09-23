@@ -12,7 +12,7 @@ const Beneficiario = (props) => {
       <Input title="CURP" type="text" name="curp" required onChange={props.handleBeneficiario}/>
       <Input title="Género" type="text" name="genero" required onChange={props.handleBeneficiario}/>
       <Input title="Domicilio Particular" type="text" name="domicilioParticular" required onChange={props.handleBeneficiario}/>
-      <Input title="Número de Telefónico" type="number" name="numeroTelefono" required onChange={props.handleBeneficiario}/>
+      <Input title="Número Telefónico" type="number" name="numeroTelefono" required onChange={props.handleBeneficiario}/>
       <Input title="Correo Electrónico" type="email" name="correoElectronico" required onChange={props.handleBeneficiario}/>
     </Section>
   );

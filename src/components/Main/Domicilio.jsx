@@ -16,14 +16,14 @@ const Domicilio = (props) => {
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Número exterior"
+        title="Número Exterior"
         type="text"
         name="numeroExterior"
         required
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Número interior"
+        title="Número Interior"
         type="text"
         name="numeroInterior"
         onChange={props.handleDomicilio}
@@ -57,7 +57,7 @@ const Domicilio = (props) => {
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Entidad Federativa o estado"
+        title="Entidad Federativa o Estado"
         type="text"
         name="entidadFederativaEstado"
         required
@@ -78,7 +78,7 @@ const Domicilio = (props) => {
         onChange={props.handleDomicilio}
       />
       <Input
-        title="Dirección de correo electrónico"
+        title="Dirección de Correo Electrónico"
         type="email"
         name="correoElectronico"
         required

@@ -29,14 +29,14 @@ const InformacionGeneral = (props) => {
         onChange={props.handleInformacionGeneral}
       />
       <Input
-        title="Fecha de constitución"
+        title="Fecha de Constitución"
         type="date"
         name="fechaConstitucion"
         required
         onChange={props.handleInformacionGeneral}
       />
       <Input
-        title="Fecha de inicio de operaciones"
+        title="Fecha de Inicio de Operaciones"
         type="date"
         name="fechaInicioOperaciones"
         required
