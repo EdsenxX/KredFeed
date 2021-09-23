@@ -47,6 +47,7 @@ const Sidebar = () => {
 
   return (
     <nav className="w-full bg-gray-100 rounded-xl p-5 h-full">
+      <p className="text-2xl font-bold">Secciones</p>
       <ul className="list-decimal p-5">
         <li
           className={`hover:text-blue-500 mb-3 ${
