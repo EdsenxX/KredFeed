@@ -6,8 +6,15 @@ import Input from "./Input";
 import InputFile from "./InputFile";
 
 const Domicilio = (props) => {
+  const save = (e) => {
+    const correctForm = props.validateForm(e);
+    if (correctForm) {
+      alert("Informacion del domicilio guardada correctamente");
+    }
+  };
+
   return (
-    <Section title="Domicilio" id="domicilio">
+    <Section title="Domicilio" id="domicilio" save={save}>
       <Input
         title="Calle o Avenida"
         type="text"

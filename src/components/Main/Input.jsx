@@ -18,7 +18,9 @@ const Input = (props) => {
         name={props.name}
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline rounded"
         onChange={props.onChange}
+        required={ props.required ? true : false }
       />
+      <p className="error text-red-500 text-xs invisible">Campo obligatorio</p>
     </div>
   );
 };

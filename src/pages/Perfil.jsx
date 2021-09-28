@@ -127,6 +127,50 @@ class Perfil extends Component {
     }));
   };
 
+  validateForm = (event) => {
+    event.preventDefault();
+    // los children Htmlcollection se camvierte a array y se
+    // quita el primer elemento que es un parrafo y los dor ultimos elementos
+    const children = [...event.target.children].slice(1,-2)
+    for (let index = 0; index < children.length; index++) {
+      const element = children[index]
+      const elementChildren = [...element.children]
+      if(element.classList.contains('input-file')){
+        if(typeof (elementChildren[1].children[4]) !== 'object'){
+          elementChildren[1].classList.remove('border-red-500')
+          elementChildren[2].classList.add('invisible')
+        }
+      }else{
+        elementChildren[1].classList.remove('border','border-red-500')
+        elementChildren[2].classList.add('invisible')
+      }
+    }
+    let errors = 0;
+    for (let index = 0; index < children.length; index++) {
+      const element = children[index]
+      const elementChildren = [...element.children]
+      if(element.classList.contains('input-file')){
+        if(typeof (elementChildren[1].children[4]) === 'object'){
+          errors++;
+          elementChildren[1].classList.add('border-red-500')
+          elementChildren[2].classList.remove('invisible')
+        }
+      }else if (elementChildren[1].value.trim() === '' && elementChildren[1].required){
+        errors++;
+        elementChildren[1].classList.add('border','border-red-500')
+        elementChildren[2].classList.remove('invisible')
+      }else if(elementChildren[1].type === "email"){
+        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!re.test(elementChildren[1].value)){
+          errors++;
+          elementChildren[1].classList.add('border','border-red-500')
+          elementChildren[2].classList.remove('invisible')
+        }
+      }
+    }
+    return errors === 0
+  };
+
   render() {
     return (
       <Layout
@@ -135,6 +179,8 @@ class Perfil extends Component {
         handleRepresentanteLegal={this.handleRepresentanteLegal}
         handleCuentaBancaria={this.handleCuentaBancaria}
         handleBeneficiario={this.handleBeneficiario}
+        // Guardar
+        validateForm={this.validateForm}
       />
     );
   }

@@ -5,8 +5,20 @@ import Section from "./Section";
 import Input from "./Input";
 
 const InformacionGeneral = (props) => {
+
+  const save = (e) => {
+    const correctForm = props.validateForm(e)
+    if(correctForm){
+      alert('Informacion General guardada correctamente')
+    }
+  }
+  
   return (
-    <Section title="Informacion General" id="informacionGeneral">
+    <Section
+      title="Informacion General"
+      id="informacionGeneral"
+      save={save}
+    >
       <Input
         title="Razón Social"
         type="text"

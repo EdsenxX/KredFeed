@@ -13,13 +13,24 @@ const Main = (props) => {
       <h1 className="text-center text-3xl mb-5">Perfil de Usuario</h1>
       <InformacionGeneral
         handleInformacionGeneral={props.handleInformacionGeneral}
+        validateForm={props.validateForm}
       />
-      <Domicilio handleDomicilio={props.handleDomicilio} />
+      <Domicilio
+        handleDomicilio={props.handleDomicilio}
+        validateForm={props.validateForm}
+      />
       <RepresentanteLegal
         handleRepresentanteLegal={props.handleRepresentanteLegal}
+        validateForm={props.validateForm}
       />
-      <Banco handleCuentaBancaria={props.handleCuentaBancaria} />
-      <Beneficiario handleBeneficiario={props.handleBeneficiario} />
+      <Banco
+        handleCuentaBancaria={props.handleCuentaBancaria}
+        validateForm={props.validateForm}
+      />
+      <Beneficiario
+        handleBeneficiario={props.handleBeneficiario}
+        validateForm={props.validateForm}
+      />
     </div>
   );
 };

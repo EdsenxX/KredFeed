@@ -50,7 +50,7 @@ const InputFile = (props) => {
   const ID = `${props.name}-${ramdom}`;
 
   return (
-    <div className="w-full px-1 mb-3">
+    <div className="w-full px-1 mb-3 input-file">
       <label htmlFor={ID} className="block text-gray-600 text-sm mb-2">
         {props.title}
         {props.required && <span className="text-red-500"> *</span>}
@@ -90,6 +90,7 @@ const InputFile = (props) => {
           </Fragment>
         )}
       </div>
+      <p className="error text-red-500 text-xs invisible">Campo obligatorio</p>
     </div>
   );
 };

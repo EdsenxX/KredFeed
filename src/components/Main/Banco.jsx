@@ -5,8 +5,16 @@ import Section from "./Section";
 import Input from "./Input";
 
 const Banco = (props) => {
+
+  const save = (e) => {
+    const correctForm = props.validateForm(e);
+    if (correctForm) {
+      alert("Informacion del banco guradada correctamente");
+    }
+  };
+  
   return (
-    <Section title="Cuenta Bancaria" id="cuentaBancaria">
+    <Section title="Cuenta Bancaria" id="cuentaBancaria" save={save}>
       <Input
         title="CLABE"
         type="text"

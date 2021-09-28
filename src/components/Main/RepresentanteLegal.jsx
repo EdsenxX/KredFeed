@@ -6,8 +6,16 @@ import Input from "./Input";
 import InputFile from "./InputFile";
 
 const RepresentanteLegal = (props) => {
+
+  const save = (e) => {
+    const correctForm = props.validateForm(e);
+    if (correctForm) {
+      alert("Informacion del representante legal guardada correctamente");
+    }
+  };
+
   return (
-    <Section title="Representante Legal" id="representanteLegal">
+    <Section title="Representante Legal" id="representanteLegal" save={save}>
       <Input title="Nombre" type="text" name="nombre" required onChange={props.handleRepresentanteLegal}/>
       <Input title="Género" type="text" name="genero" required onChange={props.handleRepresentanteLegal}/>
       <Input
