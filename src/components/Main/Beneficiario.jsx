@@ -3,6 +3,7 @@ import React from "react";
 // components
 import Section from "./Section";
 import Input from "./Input";
+import DomicilioInputs from "./DomicilioInputs";
 
 const Beneficiario = (props) => {
   const save = (e) => {
@@ -48,13 +49,6 @@ const Beneficiario = (props) => {
         onChange={props.handleBeneficiario}
       />
       <Input
-        title="Domicilio Particular"
-        type="text"
-        name="domicilioParticular"
-        required
-        onChange={props.handleBeneficiario}
-      />
-      <Input
         title="Número Telefónico"
         type="number"
         name="numeroTelefono"
@@ -68,6 +62,9 @@ const Beneficiario = (props) => {
         required
         onChange={props.handleBeneficiario}
       />
+      {/* Domicilio */}
+        <DomicilioInputs onChange={props.handleBeneficiarioDomicilio}/>
+      {/* Domicilio */}
     </Section>
   );
 };

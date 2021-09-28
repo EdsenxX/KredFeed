@@ -21,6 +21,9 @@ const Main = (props) => {
       />
       <RepresentanteLegal
         handleRepresentanteLegal={props.handleRepresentanteLegal}
+        handleRepresentanteLegalDomicilio={
+          props.handleRepresentanteLegalDomicilio
+        }
         validateForm={props.validateForm}
       />
       <Banco
@@ -29,6 +32,7 @@ const Main = (props) => {
       />
       <Beneficiario
         handleBeneficiario={props.handleBeneficiario}
+        handleBeneficiarioDomicilio={props.handleBeneficiarioDomicilio}
         validateForm={props.validateForm}
       />
     </div>

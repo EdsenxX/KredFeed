@@ -17,8 +17,12 @@ const Layout = (props) => {
             handleInformacionGeneral={props.handleInformacionGeneral}
             handleDomicilio={props.handleDomicilio}
             handleRepresentanteLegal={props.handleRepresentanteLegal}
+            handleRepresentanteLegalDomicilio={
+              props.handleRepresentanteLegalDomicilio
+            }
             handleCuentaBancaria={props.handleCuentaBancaria}
             handleBeneficiario={props.handleBeneficiario}
+            handleBeneficiarioDomicilio={props.handleBeneficiarioDomicilio}
             // Guardar
             validateForm={props.validateForm}
           />

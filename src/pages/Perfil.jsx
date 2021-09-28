@@ -40,7 +40,18 @@ class Perfil extends Component {
           nacionalidad: "",
           curp: "",
           rfc: "",
-          domicilioParticular: "",
+          domicilio: {
+            calleAvenida: "",
+            numeroExterior: "",
+            numeroInterior: "",
+            codigoPostal: "",
+            coloniaUrbanizacion: "",
+            delegacionMunicipio: "",
+            cuidadPoblacion: "",
+            entidadFederativaEstado: "",
+            numeroTelefono: "",
+            comprobante: "",
+          },
           correoElectronicoRepresentante: "",
           telefonoRepresentante: "",
           documentoIdentidad: "",
@@ -54,7 +65,18 @@ class Perfil extends Component {
           fechaNacimiento: "",
           curp: "",
           genero: "",
-          domicilioParticular: "",
+          domicilio: {
+            calleAvenida: "",
+            numeroExterior: "",
+            numeroInterior: "",
+            codigoPostal: "",
+            coloniaUrbanizacion: "",
+            delegacionMunicipio: "",
+            cuidadPoblacion: "",
+            entidadFederativaEstado: "",
+            numeroTelefono: "",
+            comprobante: "",
+          },
           numeroTelefono: "",
           correoElectronico: "",
         },
@@ -127,48 +149,83 @@ class Perfil extends Component {
     }));
   };
 
+  handleBeneficiarioDomicilio = (e) => {
+    const { value, name } = e.target;
+    this.setState((prevState) => ({
+      perfil: {
+        ...prevState.perfil,
+        beneficiario: {
+          ...prevState.perfil.beneficiario,
+          domicilio: {
+            ...prevState.perfil.beneficiario.domicilio,
+            [name]: value,
+          },
+        },
+      },
+    }));
+  };
+
+  handleRepresentanteLegalDomicilio = (e) => {
+    const { value, name } = e.target;
+    this.setState((prevState) => ({
+      perfil: {
+        ...prevState.perfil,
+        representanteLegal: {
+          ...prevState.perfil.representanteLegal,
+          domicilio: {
+            ...prevState.perfil.representanteLegal.domicilio,
+            [name]: value,
+          },
+        },
+      },
+    }));
+  };
+
   validateForm = (event) => {
     event.preventDefault();
     // los children Htmlcollection se camvierte a array y se
     // quita el primer elemento que es un parrafo y los dor ultimos elementos
-    const children = [...event.target.children].slice(1,-2)
+    const children = [...event.target.children].slice(1, -2);
     for (let index = 0; index < children.length; index++) {
-      const element = children[index]
-      const elementChildren = [...element.children]
-      if(element.classList.contains('input-file')){
-        if(typeof (elementChildren[1].children[4]) !== 'object'){
-          elementChildren[1].classList.remove('border-red-500')
-          elementChildren[2].classList.add('invisible')
+      const element = children[index];
+      const elementChildren = [...element.children];
+      if (element.classList.contains("input-file")) {
+        if (typeof elementChildren[1].children[4] !== "object") {
+          elementChildren[1].classList.remove("border-red-500");
+          elementChildren[2].classList.add("invisible");
         }
-      }else{
-        elementChildren[1].classList.remove('border','border-red-500')
-        elementChildren[2].classList.add('invisible')
+      } else {
+        elementChildren[1].classList.remove("border", "border-red-500");
+        elementChildren[2].classList.add("invisible");
       }
     }
     let errors = 0;
     for (let index = 0; index < children.length; index++) {
-      const element = children[index]
-      const elementChildren = [...element.children]
-      if(element.classList.contains('input-file')){
-        if(typeof (elementChildren[1].children[4]) === 'object'){
+      const element = children[index];
+      const elementChildren = [...element.children];
+      if (element.classList.contains("input-file")) {
+        if (typeof elementChildren[1].children[4] === "object") {
           errors++;
-          elementChildren[1].classList.add('border-red-500')
-          elementChildren[2].classList.remove('invisible')
+          elementChildren[1].classList.add("border-red-500");
+          elementChildren[2].classList.remove("invisible");
         }
-      }else if (elementChildren[1].value.trim() === '' && elementChildren[1].required){
+      } else if (
+        elementChildren[1].value.trim() === "" &&
+        elementChildren[1].required
+      ) {
         errors++;
-        elementChildren[1].classList.add('border','border-red-500')
-        elementChildren[2].classList.remove('invisible')
-      }else if(elementChildren[1].type === "email"){
+        elementChildren[1].classList.add("border", "border-red-500");
+        elementChildren[2].classList.remove("invisible");
+      } else if (elementChildren[1].type === "email") {
         var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if(!re.test(elementChildren[1].value)){
+        if (!re.test(elementChildren[1].value)) {
           errors++;
-          elementChildren[1].classList.add('border','border-red-500')
-          elementChildren[2].classList.remove('invisible')
+          elementChildren[1].classList.add("border", "border-red-500");
+          elementChildren[2].classList.remove("invisible");
         }
       }
     }
-    return errors === 0
+    return errors === 0;
   };
 
   render() {
@@ -177,8 +234,12 @@ class Perfil extends Component {
         handleInformacionGeneral={this.handleInformacionGeneral}
         handleDomicilio={this.handleDomicilio}
         handleRepresentanteLegal={this.handleRepresentanteLegal}
+        handleRepresentanteLegalDomicilio={
+          this.handleRepresentanteLegalDomicilio
+        }
         handleCuentaBancaria={this.handleCuentaBancaria}
         handleBeneficiario={this.handleBeneficiario}
+        handleBeneficiarioDomicilio={this.handleBeneficiarioDomicilio}
         // Guardar
         validateForm={this.validateForm}
       />
